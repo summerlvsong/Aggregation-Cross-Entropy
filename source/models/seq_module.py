@@ -31,6 +31,7 @@ class ACE(Sequence):
         T_ = self.h*self.w
 
         input = input.view(self.bs,T_,-1)
+        input = input + 1e-10
 
         self.softmax = input
         label[:,0] = T_ - label[:,0]
